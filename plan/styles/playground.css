@@ -1,0 +1,101 @@
+/* Utility classes */
+.animate {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate.animate--infinite {
+  animation-iteration-count: infinite;
+}
+
+.animate.animate--delay-1s {
+  animation-delay: 1s; 
+}
+
+.animate.animate--slow {
+  animation-duration: 3s;
+}
+
+/* Animations */
+ 
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-300px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotate {
+  from { 
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-60px);
+  }
+
+  60% {
+    transform: translateY(-40px);
+  }
+
+}
+
+.bounce {
+  animation-name: bounce;
+}
+
+.rotate {
+  animation-name: rotate;
+  animation-timing-function: linear;
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+  animation-timing-function: ease-in-out;
+}
+
+.chrome-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    width: 1120px;
+    height: 740px;
+}
+
+.content{
+  width: 50px;
+}
+
+.ground{
+  width: 100px;
+  height: 10px;
+  background-color: purple;
+  border-radius: 5px;
+
+
+  /*
+  animation-name: slideInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: ;
+  */
+}

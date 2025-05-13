@@ -1,0 +1,82 @@
+body {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: -40px;
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+.bounceUp {
+  animation-name: bounceUp;
+}
+
+.background-picture-container {
+  display: flex;
+}
+
+.background-header {
+  position: relative;
+}
+
+.plan-options-container {
+  display: flex;
+  justify-content: center;
+  gap: 25%;
+
+  position:absolute;
+  bottom: 40%;
+
+  width: 100%;
+  min-width: 800px;
+}
+
+.background-picture {
+  min-width: 600px;
+}
+
+.existing-plans {
+  background: none;
+  border: solid;
+  color:  rgb(225, 174, 22);
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 50px;
+  margin-left: 50%;
+  padding: 20px 20px;
+  transition: 1s;
+  width: 300px;
+}
+
+.existing-plans:hover {
+  background-color: rgb(225, 174, 22);
+  border: none;
+  color: white;
+}
+
+.new-plans {
+  background: none;
+  border: solid;
+  color: rgb(225, 174, 22);
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: 700;
+  padding: 20px 20px;
+  transition: 1s;
+  width: 500px;
+}
+
+.new-plans:hover {
+  background-color: rgb(225, 174, 22);
+  border: none;
+  color: white;
+}

@@ -1,0 +1,150 @@
+body {
+  margin-top: 0px;
+  margin-left: 0;
+  margin-right: -5px;
+  margin-bottom: -5px;
+  background-color: black;
+}
+
+.choice-button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.stopDisplaying {
+  display: none;
+}
+
+.boxing-plan {
+  display: inline-block;
+  width: 50%;
+  height: 840px;
+  margin-right: -5px;
+} 
+
+.boxing-button {
+  background-color: black;
+  color: rgb(225, 174, 22);
+}
+
+.gym-plan {
+  display: inline-block;
+  width: 50%;
+  height: 840px;
+  margin-left: 0px;
+}
+
+.gym-button {
+  background-color:  rgb(225, 174, 22);
+  color: black;
+}
+
+.schedule {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  border: solid;
+  border-color: white;
+  height: 100px;
+  font-family: Roboto;
+}
+
+.js-exercise {
+  font-weight: 900;
+  color:rgb(223, 223, 41);
+}
+
+.js-row {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.inputText {
+  font-family: Roboto;
+  font-weight: 700;
+  border: none;
+  width: 95%;
+  background-color: black;
+  flex: 1;
+}
+
+.schedule-week 
+.row {
+  border: none;
+  background-color: white;
+  color: black;
+  font-weight: 500;
+}
+
+.extra-row {
+  margin-left: -1px;
+  background-color: black;
+}
+
+.plus {
+  display:inline-block;  
+}
+
+.add {
+  margin-right: 10px;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  font-family: Roboto; 
+  font-weight: 700;
+  font-size: large;
+  box-shadow: 3px 2px 0px 0px rgb(255, 255, 255);
+}
+
+.minus {
+  display: inline-block;
+  margin-right: 990px;
+}
+
+.remove {
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: large;
+  box-shadow: 3px 2px 0px 0px rgb(222, 221, 216);
+}
+
+.js-save {
+  display:inline-block;  
+}
+
+.save {
+  border: none;
+  width: 60px;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: large;
+  box-shadow: 3px 2px 0px 0px rgb(222, 221, 216);
+}
+
+.save:hover {
+  color: yellow;
+}
