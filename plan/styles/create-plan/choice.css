@@ -39,6 +39,10 @@ body {
   margin-left: 0px;
 }
 
+.container {
+  margin-bottom: 20%;
+}
+
 .gym-button {
   background-color:  rgb(225, 174, 22);
   color: black;
@@ -77,9 +81,10 @@ body {
   width: 95%;
   background-color: black;
   flex: 1;
+  color: yellow;
 }
 
-.schedule-week 
+.js-schedule-week 
 .row {
   border: none;
   background-color: white;
@@ -87,49 +92,9 @@ body {
   font-weight: 500;
 }
 
-.extra-row {
-  margin-left: -1px;
-  background-color: black;
-}
-
-.plus {
-  display:inline-block;  
-}
-
-.add {
-  margin-right: 10px;
-  border: none;
-  width: 30px;
-  height: 30px;
-  background-color: gray;
-  color: white;
-  cursor: pointer;
-  font-family: Roboto; 
-  font-weight: 700;
-  font-size: large;
-  box-shadow: 3px 2px 0px 0px rgb(255, 255, 255);
-}
-
-.minus {
-  display: inline-block;
-  margin-right: 990px;
-}
-
-.remove {
-  border: none;
-  width: 30px;
-  height: 30px;
-  background-color: gray;
-  color: white;
-  cursor: pointer;
-  font-family: Roboto;
-  font-weight: 700;
-  font-size: large;
-  box-shadow: 3px 2px 0px 0px rgb(222, 221, 216);
-}
-
 .js-save {
-  display:inline-block;  
+  display:inline-block;
+  margin-left: 90%;  
 }
 
 .save {
@@ -145,6 +110,10 @@ body {
   box-shadow: 3px 2px 0px 0px rgb(222, 221, 216);
 }
 
-.save:hover {
-  color: yellow;
+.add-row {
+  margin-left: 90%;
+}
+
+.js-input-row {
+  margin-top: 50px;
 }

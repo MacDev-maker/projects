@@ -1,26 +1,9 @@
-let arrDay = [{
-  day: 'Monday'
-}, {
-  day: 'Tuesday'
-}, {
-  day: 'Wednesday'
-}, {
-  day: 'Thursday'
-}, {
-  day: 'Friday'
-},{
-  day: 'Saturday'
-}, {
-  day: 'Sunday'
-}];
-
-let rows = [];
+import { arrDay, rows } from "./data.js";
 
 renderHeader();
+renderInput();
+renderAdd();
 renderSave();
-renderMinusButton();
-renderRows();
-renderButton();
 
 function check() {
   document.querySelectorAll(".js-button-plan")
@@ -41,15 +24,8 @@ function renderHeader() {
     rowHTML += html;
   });
 
-  document.querySelector('.schedule-week')
+  document.querySelector('.js-schedule-week')
     .innerHTML = rowHTML;
-}
-
-function renderButton() {
-  let html = '<button class = "add">+</button>';
-
-  document.querySelector('.plus')
-    .innerHTML += html;
 }
 
 function renderSave() {
@@ -59,153 +35,201 @@ function renderSave() {
     .innerHTML += html;
 }
 
-function renderMinusButton() {
-  let html = '<button class = "remove">-</button>';
-
-  document.querySelector('.minus')
-    .innerHTML = html;
+function renderInput() {
+  document.querySelector('.js-input-row')
+    .innerHTML = `<div class = "schedule row ">
+    <div class = "row js-row">
+      <input class = "inputText js-inputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Weight:">
+    </div>
+    <div class = "row js-row">
+      <input class = "inputText js-inputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Weight:">
+    </div>
+    <div class = "row js-row">
+      <input class = "inputText js-inputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Weight:">
+    </div>
+    <div class = "row js-row">
+      <input class = "inputText js-inputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Weight:">
+    </div>
+    <div class = "row js-row">
+      <input class = "inputText js-inputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Weight:">
+    </div>
+    <div class = "row js-row">
+      <input class = "inputText js-inputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Weight:">
+    </div>
+    <div class = "row js-row">
+      <input class = "inputText js-inputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-inputText" type = "text" placeholder = "Weight:">
+    </div>
+  </div>`;
 }
 
-function renderRows() {
-  let rowsHTML = '';
+function renderAdd() {
+  document.querySelector('.js-add-row')
+    .innerHTML = `<button class="add-row">Add row</button>`;
+}
 
-  rows.forEach((row, index) => {
-    const html = `
-    <div class = "schedule row">
+const schedule = [{
+  data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35]},{
+  data: [1,2,5,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,7,21,22,23,24,25,26,27,28,29,30,31,32,33,34,39]
+}];
+
+renderSchedule();
+
+function renderSchedule() {
+  let scheduleHTML = '';
+
+  schedule.forEach((row, index) => { 
+    const {data} = row;
+
+    const html = `<div class = "schedule row">
       <div class = "row js-row">
-        <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-        <input class = "inputText" type = "text" placeholder = "Sets:">
-        <input class = "inputText" type = "text" placeholder = "Reps:">
-        <input class = "inputText" type = "text" placeholder = "Rir:">
-        <input class = "inputText" type = "text" placeholder = "Weight:">
+        <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[0]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[1]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[2]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[3]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[4]}>
       </div>
       <div class = "row js-row">
-        <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-        <input class = "inputText" type = "text" placeholder = "Sets:">
-        <input class = "inputText" type = "text" placeholder = "Reps:">
-        <input class = "inputText" type = "text" placeholder = "Rir:">
-        <input class = "inputText" type = "text" placeholder = "Weight:">
+        <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[5]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[6]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[7]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[8]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[9]}>
       </div>
       <div class = "row js-row">
-        <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-        <input class = "inputText" type = "text" placeholder = "Sets:">
-        <input class = "inputText" type = "text" placeholder = "Reps:">
-        <input class = "inputText" type = "text" placeholder = "Rir:">
-        <input class = "inputText" type = "text" placeholder = "Weight:">
+        <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[10]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[11]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[12]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[13]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[14]}>
       </div>
       <div class = "row js-row">
-        <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-        <input class = "inputText" type = "text" placeholder = "Sets:">
-        <input class = "inputText" type = "text" placeholder = "Reps:">
-        <input class = "inputText" type = "text" placeholder = "Rir:">
-        <input class = "inputText" type = "text" placeholder = "Weight:">
+        <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[15]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[16]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[17]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[18]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[19]}>
       </div>
       <div class = "row js-row">
-        <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-        <input class = "inputText" type = "text" placeholder = "Sets:">
-        <input class = "inputText" type = "text" placeholder = "Reps:">
-        <input class = "inputText" type = "text" placeholder = "Rir:">
-        <input class = "inputText" type = "text" placeholder = "Weight:">
+        <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[20]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[21]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[22]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[23]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[24]}>
       </div>
       <div class = "row js-row">
-        <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-        <input class = "inputText" type = "text" placeholder = "Sets:">
-        <input class = "inputText" type = "text" placeholder = "Reps:">
-        <input class = "inputText" type = "text" placeholder = "Rir:">
-        <input class = "inputText" type = "text" placeholder = "Weight:">
+        <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[25]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[26]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[27]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[28]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[29]}>
       </div>
       <div class = "row js-row">
-        <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-        <input class = "inputText" type = "text" placeholder = "Sets:">
-        <input class = "inputText" type = "text" placeholder = "Reps:">
-        <input class = "inputText" type = "text" placeholder = "Rir:">
-        <input class = "inputText" type = "text" placeholder = "Weight:">
+        <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[30]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[31]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[32]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[33]}>
+        <input class = "inputText js-outputText" type = "text" placeholder = ${data[34]}>
       </div>
     </div>`;
-    rowsHTML += html;
+    scheduleHTML += html;
   });
 
-  document.querySelector('.extra-row')
-    .innerHTML = rowsHTML;
+  document.querySelector('.js-rows')
+    .innerHTML = scheduleHTML;
 }
 
 function addRow() {
-  rows.push({
-    row: `<div class = "schedule row ">
+  const html = `<div class = "schedule row js-numb-${counterRows}">
     <div class = "row js-row">
-      <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText" type = "text" placeholder = "Weight:">
+      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
     </div>
     <div class = "row js-row">
-      <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText" type = "text" placeholder = "Weight:">
+      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
     </div>
     <div class = "row js-row">
-      <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText" type = "text" placeholder = "Weight:">
+      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
     </div>
     <div class = "row js-row">
-      <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText" type = "text" placeholder = "Weight:">
+      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
     </div>
     <div class = "row js-row">
-      <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText" type = "text" placeholder = "Weight:">
+      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
     </div>
     <div class = "row js-row">
-      <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText" type = "text" placeholder = "Weight:">
+      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
     </div>
     <div class = "row js-row">
-      <input class = "inputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText" type = "text" placeholder = "Weight:">
+      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
+      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
     </div>
-  </div>`
-  });
-  renderRows();
+  </div>`;
 }
-
-function removeRow() {
-  rows.splice(-1);
-  renderRows();
-}
-
-document.querySelector('.plus')
-  .addEventListener('click', () => {
-    addRow();
-  });
-
-document.querySelector('.minus')
-  .addEventListener('click', () => {
-    removeRow();
-  });
 
 document.querySelectorAll(".js-button-plan")
-  .forEach((button) => {
-    button.addEventListener('click', () => {
-      let title = document.querySelector(".js-title");
-      title.innerHTML= 'Creating Plan';
-      check();
-    });
+.forEach((button) => {
+  button.addEventListener('click', () => {
+    let title = document.querySelector(".js-title");
+    title.innerHTML= 'Creating Plan';
+    check();
+  });
+});
+
+document.querySelector('.js-add-row')
+  .addEventListener('click', () => {
+    addRow();
   });
