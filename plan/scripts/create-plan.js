@@ -101,7 +101,7 @@ function renderDelete() {
     .innerHTML = `<button class="delete-row">Delete row</button>`;
 }
 
-const schedule = [];
+const schedule = JSON.parse(localStorage.getItem('schedule')) ||[];
 
 renderSchedule();
 
@@ -177,6 +177,8 @@ function addRow() {
 
   schedule.push({data});
   renderSchedule();
+
+  localStorage.setItem('schedule',JSON.stringify(schedule));
 
   document.querySelectorAll('.js-inputText').forEach((box) => {
     box.value = '';
