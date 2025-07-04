@@ -1,8 +1,9 @@
-import { arrDay, rows } from "./data.js";
+import { arrDay } from "./data.js";
 
 renderHeader();
 renderInput();
 renderAdd();
+renderDelete();
 renderSave();
 
 function check() {
@@ -95,10 +96,12 @@ function renderAdd() {
     .innerHTML = `<button class="add-row">Add row</button>`;
 }
 
-const schedule = [{
-  data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35]},{
-  data: [1,2,5,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,7,21,22,23,24,25,26,27,28,29,30,31,32,33,34,39]
-}];
+function renderDelete() {
+  document.querySelector('.js-delete-row')
+    .innerHTML = `<button class="delete-row">Delete row</button>`;
+}
+
+const schedule = [];
 
 renderSchedule();
 
@@ -167,57 +170,22 @@ function renderSchedule() {
 }
 
 function addRow() {
-  const html = `<div class = "schedule row js-numb-${counterRows}">
-    <div class = "row js-row">
-      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
-    </div>
-    <div class = "row js-row">
-      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
-    </div>
-    <div class = "row js-row">
-      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
-    </div>
-    <div class = "row js-row">
-      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
-    </div>
-    <div class = "row js-row">
-      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
-    </div>
-    <div class = "row js-row">
-      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
-    </div>
-    <div class = "row js-row">
-      <input class = "inputText js-outputText js-exercise" type = "text" placeholder = "Exercise">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Sets:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Reps:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Rir:">
-      <input class = "inputText js-outputText" type = "text" placeholder = "Weight:">
-    </div>
-  </div>`;
+  let data = [];
+  document.querySelectorAll('.js-inputText').forEach((box) => {
+    data.push(box.value);
+  });
+
+  schedule.push({data});
+  renderSchedule();
+
+  document.querySelectorAll('.js-inputText').forEach((box) => {
+    box.value = '';
+  });
+}
+
+function deleteRow() {
+  schedule.pop();
+  renderSchedule();
 }
 
 document.querySelectorAll(".js-button-plan")
@@ -232,4 +200,9 @@ document.querySelectorAll(".js-button-plan")
 document.querySelector('.js-add-row')
   .addEventListener('click', () => {
     addRow();
+  });
+
+document.querySelector('.js-delete-row')
+  .addEventListener('click', () => {
+    deleteRow();
   });

@@ -13,13 +13,3 @@ export let arrDay = [{
 }, {
   day: 'Sunday'
 }];
-
-export let rows = [];
-
-let cell = {
-  exercise: '',
-  sets: '',
-  reps: '',
-  rir: '',
-  weight: ''
-};
