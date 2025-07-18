@@ -4,12 +4,7 @@ const schedule = JSON.parse(localStorage.getItem('schedule')) || [];
 
 let planCounter = localStorage.getItem('planCounter') || 0;
 
-renderHeader();
-renderInput();
-renderAdd();
-renderDelete();
-renderSave();
-
+renderPage();
 
 function check() {
   document.querySelectorAll(".js-button-plan")
@@ -105,8 +100,6 @@ function renderDelete() {
   document.querySelector('.js-delete-row')
     .innerHTML = `<button class="delete-row">Delete row</button>`;
 }
-
-renderSchedule();
 
 function renderSchedule() {
   let scheduleHTML = '';
@@ -237,6 +230,15 @@ function checkIfContains(array, planName) {
       result = true;
   });
   return result;
+}
+
+function renderPage() {
+  renderHeader();
+  renderInput();
+  renderAdd();
+  renderDelete();
+  renderSave();
+  renderSchedule();
 }
 
 document.querySelectorAll(".js-button-plan")
