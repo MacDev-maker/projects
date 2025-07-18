@@ -17,7 +17,7 @@ body {
 }
 
 .stopDisplaying {
-  display: none;
+  display: none !important;
 }
 
 .boxing-plan {
@@ -116,4 +116,38 @@ body {
 
 .js-input-row {
   margin-top: 50px;
+}
+
+.js-form-popup {
+  position: fixed;
+  height: 100px;
+  width: 200px; 
+  border:2px solid red;
+  background-color: white;
+  margin-left: 41%;
+  margin-top: 20%;
+}
+
+.js-input-plan-name {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+}
+
+.js-confirm {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  flex-shrink: 0;
+}
+
+.js-go-back {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  flex-shrink: 0;
+}
+
+[hidden] {
+  display: none !important;
 }

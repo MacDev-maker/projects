@@ -1,4 +1,4 @@
-export let arrDay = [{
+export const arrDay = [{
   day: 'Monday'
 }, {
   day: 'Tuesday'
@@ -13,3 +13,5 @@ export let arrDay = [{
 }, {
   day: 'Sunday'
 }];
+
+export let allPlans = [];

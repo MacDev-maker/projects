@@ -1,10 +1,15 @@
-import { arrDay } from "./data.js";
+import { arrDay, allPlans } from "./data.js";
+
+const schedule = JSON.parse(localStorage.getItem('schedule')) || [];
+
+let planCounter = localStorage.getItem('planCounter') || 0;
 
 renderHeader();
 renderInput();
 renderAdd();
 renderDelete();
 renderSave();
+
 
 function check() {
   document.querySelectorAll(".js-button-plan")
@@ -101,8 +106,6 @@ function renderDelete() {
     .innerHTML = `<button class="delete-row">Delete row</button>`;
 }
 
-const schedule = JSON.parse(localStorage.getItem('schedule')) ||[];
-
 renderSchedule();
 
 function renderSchedule() {
@@ -190,6 +193,52 @@ function deleteRow() {
   renderSchedule();
 }
 
+function popUp() {
+  const html = `<form type="submit" class="js-form-popup">
+        <input class="js-input-plan-name" alt="Plans name" type="text" placeholder="Type in a name">
+        <button class="js-confirm" style="color: red;">Save plan</button>
+        <button type="button" class="js-go-back" style="color: red;">Back</button>
+      </form>`;
+
+  document.querySelector('.js-form-container')
+    .innerHTML = html;
+
+  document.querySelector('.js-go-back')
+    .addEventListener('click', () => {
+      document.querySelector('.js-form-popup')
+        .toggleAttribute('hidden');
+    });
+
+  document.querySelector('.js-confirm')
+    .addEventListener('click', () => {
+      const planName = document.querySelector('.js-input-plan-name').value;
+
+      if (!checkIfContains(allPlans, planName)) {
+        allPlans.push({
+          name : planName,
+          array : JSON.parse(localStorage.getItem('schedule'))
+        });
+      }
+      localStorage.removeItem('schedule');
+      renderSchedule();
+      goBackWindow();
+    });
+}
+
+function goBackWindow() {
+  open("http://127.0.0.1:5500/plan/htmls/workout.html");
+}
+
+function checkIfContains(array, planName) {
+  let result = false;
+
+  array.forEach((item) => {
+    if(item.name == planName)
+      result = true;
+  });
+  return result;
+}
+
 document.querySelectorAll(".js-button-plan")
 .forEach((button) => {
   button.addEventListener('click', () => {
@@ -207,4 +256,11 @@ document.querySelector('.js-add-row')
 document.querySelector('.js-delete-row')
   .addEventListener('click', () => {
     deleteRow();
+  });
+
+document.querySelector('.js-save')
+  .addEventListener('click', () => {
+    planCounter++;
+    localStorage.setItem('planCounter', planCounter);
+    popUp();
   });
