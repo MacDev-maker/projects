@@ -8,8 +8,10 @@ function renderPlansArray() {
       <div class="plan-name">
         ${plan.name}
       </div>
-      
-      <button class="show-plan" data-id="${plan.name}">Show</button>
+      <div>
+        <button class="js-delete-plan" data-id="${plan.name}">Delete</button>
+        <button class="js-show-plan" data-id="${plan.name}">Show</button>
+      </div>
     </div>`;
 
     plan.array.forEach((value) => {
@@ -76,13 +78,25 @@ function renderPlansArray() {
   document.querySelector('.js-plans-container')
     .innerHTML = plansHTML;
 
-  document.querySelectorAll('.show-plan')
+  document.querySelectorAll('.js-show-plan')
     .forEach((button) => {
       button.addEventListener('click' ,() => {
         const buttonId = button.dataset.id;
 
         document.getElementById(`${buttonId}`)
           .toggleAttribute('hidden');
+      });
+    });
+
+  document.querySelectorAll('.js-delete-plan')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+        const buttonId = button.dataset.id;
+        
+        plans = plans.filter(plan => plan.name !== buttonId);
+        localStorage.setItem('allPlans', JSON.stringify(plans));
+        renderPlansArray();
+        
       });
     });
 }
