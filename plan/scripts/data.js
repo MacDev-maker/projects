@@ -14,4 +14,4 @@ export const arrDay = [{
   day: 'Sunday'
 }];
 
-export let allPlans = [];
+export let allPlans = JSON.parse(localStorage.getItem('allPlans')) || [];

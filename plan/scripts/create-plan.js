@@ -212,6 +212,7 @@ function popUp() {
           array : JSON.parse(localStorage.getItem('schedule'))
         });
       }
+      localStorage.setItem('allPlans',JSON.stringify(allPlans));
       localStorage.removeItem('schedule');
       renderSchedule();
       goBackWindow();
