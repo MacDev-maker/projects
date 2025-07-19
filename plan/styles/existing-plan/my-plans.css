@@ -1,0 +1,17 @@
+body {
+  font-family: Roboto;
+}
+
+.plan-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plan-name {
+  display: inline-block;
+}
+
+.show-plan {
+  margin-left: 100px;
+  width: 50px;
+}
