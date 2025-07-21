@@ -8,6 +8,7 @@ function renderPlansArray() {
       <div class="plan-name">
         ${plan.name}
       </div>
+
       <div>
         <button class="js-delete-plan" data-id="${plan.name}">Delete</button>
         <button class="js-show-plan" data-id="${plan.name}">Show</button>
@@ -17,7 +18,7 @@ function renderPlansArray() {
     plan.array.forEach((value) => {
       const {data} = value;
 
-      const planHtml = `<div class="js-plan-display" id=${plan.name} hidden>
+      const planHtml = `<div class="js-plan-display" id="${plan.name}" hidden>
         <div class = "schedule row">
       <div class = "row js-row">
         <input class = "inputText js-outputText js-exercise" type = "text" placeholder = ${data[0]}>
@@ -72,9 +73,9 @@ function renderPlansArray() {
       </div>`;
       html += planHtml;     
     });
-
     plansHTML += html;
   });
+
   document.querySelector('.js-plans-container')
     .innerHTML = plansHTML;
 

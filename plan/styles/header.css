@@ -1,29 +1,72 @@
 body {
+  font-family: Roboto;
   margin-left: 0px;
   margin-top: 0px;
-  margin-right: -40px;
+  margin-right: 0px;
+  height: 2000px;
 }
 
-@keyframes bounceUp {
-  0% {
-    transform: translateY(0px);
-  }
-
-  100% {
-    transform: translateY(50px);
-  }
+.introduction{
+  display: flex;
+  justify-content:space-between;
+  background-color: black;
 }
 
-.bounceUp {
-  animation-name: bounceUp;
+.header-introduction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content-introduction {
+  position: relative;
+  padding:90px 5px;
+}
+
+.header-introduction {
+  font-size: 36px;
+  margin-top: 0px;
+  margin-left: 5px;
+  color: white;
+  white-space: nowrap;
+}
+
+.caption {
+  width: 320px;
+  margin-left: 5px;
+  font-size: 12px;
+  color: rgb(181, 181, 181);
 }
 
 .background-picture-container {
-  display: flex;
+  margin-right: 5px;
+  width: 56%;
 }
 
-.background-header {
-  position: relative;
+.background-picture {
+  display: flex;
+  width: 100%;
+  min-width: 450px;
+}
+
+.forward-button {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, rgb(255, 19, 19), rgb(255, 119, 119));
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header-benefits {
+  margin-top: 150px;
+  font-size: 64px;
+  font-family: IBMPlexSerif;
+
 }
 
 .plan-options-container {
@@ -35,10 +78,6 @@ body {
   bottom: 40%;
 
   width: 100%;
-  min-width: 800px;
-}
-
-.background-picture {
   min-width: 600px;
 }
 
