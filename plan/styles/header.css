@@ -1,3 +1,13 @@
+@keyframes typing {
+  from {width: 0}
+  to {width: 100%;}
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
 body {
   font-family: Roboto;
   margin-left: 0px;
@@ -21,7 +31,7 @@ body {
 
 .content-introduction {
   position: relative;
-  padding:90px 5px;
+  padding: 90px 10px;
 }
 
 .header-introduction {
@@ -33,7 +43,7 @@ body {
 }
 
 .caption {
-  width: 320px;
+  width: 360px;
   margin-left: 5px;
   font-size: 12px;
   color: rgb(181, 181, 181);
@@ -52,21 +62,78 @@ body {
 
 .forward-button {
   position: absolute;
-  right: 15px;
-  bottom: 20px;
+  right: 0px;
+  bottom: 0px;
+
   padding: 10px 10px;
   border: none;
   border-radius: 20px;
   background-image: linear-gradient(to right, rgb(255, 19, 19), rgb(255, 119, 119));
   font-weight: 600;
+  color: white;
   cursor: pointer;
 }
 
 .header-benefits {
+  overflow: hidden;
+  white-space: nowrap;
   margin-top: 150px;
+  margin-left: 10px;
   font-size: 64px;
   font-family: IBMPlexSerif;
 
+  animation: 
+  typing 3.5s steps(40, end) 4,
+  blink-caret .75s step-end infinite;
+}
+
+.row-1-container {
+  position: relative;
+  height: 460px;
+}
+
+.barbell-caption {
+  transition: white 1s ease;
+  position: absolute;
+  right:2%;
+  top: 20%;
+  font-size: 80px;
+  font-family: IBMPlexSerif;
+  font-weight: 600;
+  width: 300px;
+  z-index: 3;
+}
+
+.barbell-caption.color-change {
+  color: white;
+}
+
+.barbell-image {
+  position: absolute;
+  width: 80%;
+}
+
+.box {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(400px);
+  transition: all 1s ease; 
+  transition-delay: 1.5s;
+
+  height: 100%;
+  background-image: linear-gradient(to right, rgb(255, 100, 100), rgb(255, 19, 19));
+  right: 5px;
+  width: 400px;
+  z-index: 2;
+}
+
+.box.show {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.make-bold {
+  font-weight: 900;
 }
 
 .plan-options-container {
