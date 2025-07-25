@@ -204,6 +204,11 @@ body {
   height: 405px;
 }
 
+.existing-plans-container:hover .existing-plans {
+  color: rgb(255, 58, 58);
+  transform: translateY(-3px);
+}
+
 .my-plans-img {
   position: absolute;
   width: 100%;
@@ -227,11 +232,6 @@ body {
   cursor: pointer;
 }
 
-.existing-plans:hover {
-  color: rgb(255, 58, 58);
-  transform: translateY(-3px);
-}
-
 .create-plan-container {
   position: absolute;
   right: 25%;
@@ -239,6 +239,11 @@ body {
 
   width: 270px;
   height: 405px;
+}
+
+.create-plan-container:hover .new-plans {
+  color: rgb(255, 58, 58);
+  transform: translateY(-2px);
 }
 
 .create-plan-img {
@@ -262,9 +267,4 @@ body {
   font-weight: 700;
   transition: 1s;
   cursor: pointer;
-}
-
-.new-plans:hover {
-  color: rgb(255, 58, 58);
-  transform: translateY(-2px);
 }
