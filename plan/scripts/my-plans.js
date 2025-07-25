@@ -97,7 +97,6 @@ function renderPlansArray() {
         plans = plans.filter(plan => plan.name !== buttonId);
         localStorage.setItem('allPlans', JSON.stringify(plans));
         renderPlansArray();
-        
       });
     });
 }

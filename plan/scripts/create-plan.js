@@ -220,7 +220,7 @@ function popUp() {
 }
 
 function goBackWindow() {
-  open("http://127.0.0.1:5500/plan/htmls/workout.html");
+  open("http://127.0.0.1:5500/htmls/workout.html");
 }
 
 function checkIfContains(array, planName) {
