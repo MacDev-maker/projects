@@ -233,6 +233,17 @@ function renderPage() {
   renderSchedule();
 }
 
+function checkIfContainRow() {
+  let row = true;
+
+  const jsRow = document.querySelector('.js-rows').childNodes;
+
+  if(jsRow.length == 0) {
+    row = false;
+  }
+  return row;
+}
+
 document.querySelectorAll(".js-button-plan")
 .forEach((button) => {
   button.addEventListener('click', () => {
@@ -254,7 +265,11 @@ document.querySelector('.js-delete-row')
 
 document.querySelector('.js-save')
   .addEventListener('click', () => {
-    planCounter++;
-    localStorage.setItem('planCounter', planCounter);
-    popUp();
+    if (checkIfContainRow()) {
+      planCounter++;
+      localStorage.setItem('planCounter', planCounter);
+      popUp();
+    } else {
+      alert('Plan must have at least 1 row.');
+    }
   });

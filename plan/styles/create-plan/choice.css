@@ -56,16 +56,19 @@ body {
 }
 
 .save {
-  border: none;
+  border: 2px solid white;
   width: 60px;
   height: 30px;
-  background-color: gray;
+  background: none;
   color: white;
   cursor: pointer;
   font-family: Roboto;
   font-weight: 700;
   font-size: large;
-  box-shadow: 3px 2px 0px 0px rgb(222, 221, 216);
+}
+
+.add-delete-container {
+  white-space: nowrap;
 }
 
 .js-add-row {
