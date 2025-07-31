@@ -6,15 +6,6 @@ let planCounter = localStorage.getItem('planCounter') || 0;
 
 renderPage();
 
-function check() {
-  document.querySelectorAll(".js-button-plan")
-    .forEach((button) => {
-      let container = document.querySelector('.container');
-      button.remove();
-      container.classList.remove('stopDisplaying');
-  });
-}
-
 function renderHeader() {
   let rowHTML = '';
 
@@ -188,9 +179,9 @@ function deleteRow() {
 
 function popUp() {
   const html = `<form type="submit" class="js-form-popup">
-        <input class="js-input-plan-name" alt="Plans name" type="text" placeholder="Type in a name">
-        <button class="js-confirm" style="color: red;">Save plan</button>
-        <button type="button" class="js-go-back" style="color: red;">Back</button>
+        <input class="js-input-plan-name" alt="Plans name" type="text" placeholder="Plan's name">
+        <button class="js-confirm">Save plan</button>
+        <button type="button" class="js-go-back">Back</button>
       </form>`;
 
   document.querySelector('.js-form-container')

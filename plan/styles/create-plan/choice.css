@@ -6,48 +6,6 @@ body {
   background-color: black;
 }
 
-.choice-button {
-  width: 100%;
-  height: 100%;
-  border: none;
-  font-family: Roboto;
-  font-size: 50px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.stopDisplaying {
-  display: none !important;
-}
-
-.boxing-plan {
-  display: inline-block;
-  width: 50%;
-  height: 840px;
-  margin-right: -5px;
-} 
-
-.boxing-button {
-  background-color: black;
-  color: rgb(225, 174, 22);
-}
-
-.gym-plan {
-  display: inline-block;
-  width: 50%;
-  height: 840px;
-  margin-left: 0px;
-}
-
-.container {
-  margin-bottom: 20%;
-}
-
-.gym-button {
-  background-color:  rgb(225, 174, 22);
-  color: black;
-}
-
 .schedule {
   display: flex;
 }
@@ -65,7 +23,7 @@ body {
 
 .js-exercise {
   font-weight: 900;
-  color:rgb(223, 223, 41);
+  color:rgb(223, 41, 41) !important;
 }
 
 .js-row {
@@ -80,8 +38,8 @@ body {
   border: none;
   width: 95%;
   background-color: black;
+  color: rgb(198, 198, 198);
   flex: 1;
-  color: yellow;
 }
 
 .js-schedule-week 
@@ -122,32 +80,46 @@ body {
   position: fixed;
   height: 100px;
   width: 200px; 
-  border:2px solid red;
   background-color: white;
   margin-left: 41%;
   margin-top: 20%;
+  border-radius: 15px;
+
+  background-color: rgb(247, 66, 66);
 }
 
 .js-input-plan-name {
   position: absolute;
   top: 20px;
   left: 10%;
+
+  padding: 5px;
+  border-radius: 3px;
+  border: none;
 }
 
 .js-confirm {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   right: 5px;
   flex-shrink: 0;
+
+  border: none;
+  background: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
 }
 
 .js-go-back {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   left: 5px;
   flex-shrink: 0;
-}
 
-[hidden] {
-  display: none !important;
+  border: none;
+  background: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
 }
