@@ -68,8 +68,47 @@ body {
   box-shadow: 3px 2px 0px 0px rgb(222, 221, 216);
 }
 
+.js-add-row {
+  display: inline-block;
+}
+
 .add-row {
-  margin-left: 90%;
+  width: 80px;
+  padding: 5px;
+
+  transition: all 1s ease; 
+  border: 2px solid white;
+  background: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.add-row:hover {
+  border-color: rgb(0, 183, 0);
+  color: rgb(0, 183, 0);
+}
+
+.js-delete-row {
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 83%;
+}
+
+.delete-row {
+  padding: 5px;
+  
+  transition: all 1s ease; 
+  border: 2px solid white;
+  background: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-row:hover {
+  border-color: red;
+  color: red;
 }
 
 .js-input-row {
