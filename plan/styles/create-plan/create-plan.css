@@ -165,3 +165,67 @@ body {
   color: white;
   cursor: pointer;
 }
+
+.page-end {
+  margin-right: -10px;
+  margin-left: -10px;
+  font-family: Roboto;
+  font-weight: 700;
+  display: flex;
+  margin-top: 40px;
+  background-color: white;
+  color: black;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  width: 33%;
+  margin-right: 30%;
+}
+
+.socials-header {
+  white-space: nowrap;
+}
+
+.icon {
+  width: 24px;
+  flex-wrap: nowrap;
+}
+
+.author-links-container {
+  display: flex;
+}
+
+.info-header {
+  white-space: nowrap;
+}
+
+.info-author {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.linkedin-link {
+  display: flex;
+}
+
+.author-icon-linkedIn {
+  width: 24px;
+}
+
+.github-link {
+  display: flex;
+}
+
+.author-icon-github {
+  width: 24px;
+}
+
+.contact {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(110, 110, 110);
+  white-space: nowrap;
+}
