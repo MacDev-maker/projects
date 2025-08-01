@@ -7,12 +7,56 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Elbasan&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <h1>Your plans</h1>
+    <h1 class="header">
+      <a class="link-workout-page" href="workout.html">
+        <button class="header-button">
+          Your plans
+        </button>
+      </a>
+    </h1>
 
     <div class="js-plans-container"></div>
+
+    <footer class="page-end">
+      <div class="socials">
+        <p class="socials-header">
+          Join us on:
+        </p>
+
+        <a href="https://www.instagram.com/" target="_blank">
+          <img class="instagram-icon icon" alt="instagram" src="../images/instagram-icon.png">
+        </a>
+        <a href="https://www.facebook.com/" target="_blank">
+          <img class="facebook-icon icon" alt="facebook" src="../images/facebook-icon.png">
+        </a>
+      </div>
+
+      <div class="info">
+        <p class="info-header">
+          Informations and contact
+        </p>
+
+        <p class="info-author">
+          © 2025 Maciej Węglarz
+        </p>
+
+        <div class="author-links-container">
+          <a class="linkedin-link" href="https://linkedin.com/in/maciej-węglarz-bb2634365" target="_blank">
+            <img class="author-icon-linkedIn" alt="linkedIn" src="../images/linkedin-icon-color.png">
+          </a>
+  
+          <a class="github-link" href="https://github.com/MacDev-maker">
+            <img class="author-icon-github" alt="Github" src="../images/github-color.png">
+          </a>
+        </div>
+
+        <p class="contact">contact: maciejwegdev@gmail.com</p>
+      </div>
+    </footer>
 
     <script type="module" src="../scripts/my-plans.js"></script>
     <script type="module" src="../scripts/data.js"></script>

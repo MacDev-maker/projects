@@ -1,11 +1,35 @@
+:root {
+  --button-border: none;
+  --button-bg: none;
+  --font-weight: 600;
+}
+
 body {
   font-family: Roboto;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-button {
+  background: none;
+  border: none;
+  font-size: 36px;
+  font-family: IBMPlexSerif;
+}
+
+.link-workout-page {
+  text-decoration: none;
 }
 
 .plan-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
+
 
 .plan-name {
   display: inline-block;
@@ -13,4 +37,87 @@ body {
 
 .show-plan {
   width: 50px;
+}
+
+.js-show-plan {
+  border: var(--button-border);
+  background: var(--button-bg);
+  font-weight: var(--font-weight);
+  cursor: pointer;
+}
+
+.js-delete-plan {
+  border: var(--button-border);
+  background: var(--button-bg);
+  font-weight: var(--font-weight);
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.js-delete-plan:hover {
+  color: rgb(243, 20, 20);
+}
+
+.page-end {
+  margin-right: -10px;
+  margin-left: -10px;
+  font-family: Roboto;
+  font-weight: 700;
+  display: flex;
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  width: 33%;
+  margin-right: 30%;
+}
+
+.socials-header {
+  white-space: nowrap;
+}
+
+.icon {
+  width: 24px;
+  flex-wrap: nowrap;
+}
+
+.author-links-container {
+  display: flex;
+}
+
+.info-header {
+  white-space: nowrap;
+}
+
+.info-author {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.linkedin-link {
+  display: flex;
+}
+
+.author-icon-linkedIn {
+  width: 24px;
+}
+
+.github-link {
+  display: flex;
+}
+
+.author-icon-github {
+  width: 24px;
+}
+
+.contact {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(110, 110, 110);
+  white-space: nowrap;
 }
