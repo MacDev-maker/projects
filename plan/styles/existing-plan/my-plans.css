@@ -25,6 +25,30 @@ body {
   text-decoration: none;
 }
 
+.exercise {
+  display: inline-block;
+  margin-right: 11.7%;
+}
+
+.sets {
+  display: inline-block;  
+  margin-right: 15.2%;
+}
+
+.reps {
+  display: inline-block;
+  margin-right: 14.8%;
+}
+
+.rir {
+  display: inline-block;
+  margin-right: 17%;
+}
+
+.weight {
+  display: inline-block;
+}
+
 .plan-container {
   display: flex;
   justify-content: space-between;
